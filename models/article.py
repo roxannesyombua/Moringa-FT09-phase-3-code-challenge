@@ -1,13 +1,11 @@
 class Article:
     def __init__(self, id, title, content, author_id, magazine_id):
-        self.id = id
+        self._id = id
         self.title = title
         self.content = content
-        self.author_id = author_id
-        self.magazine_id = magazine_id
+        self._author_id = author_id
+        self._magazine_id = magazine_id
 
-    # def __repr__(self):
-    #     return f'<Article {self.title}>'
     @property
     def id(self):
         return self._id
@@ -50,3 +48,4 @@ class Article:
         cursor.execute("SELECT name FROM magazines WHERE id = ?", (self._magazine_id,))
         magazine_name = cursor.fetchone()
         return magazine_name[0] if magazine_name else None
+    

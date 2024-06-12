@@ -1,11 +1,8 @@
 class Author:
     def __init__(self, id, name):
-        self.id = id
-        self.name = name
+        self._id = id
+        self._name = name
 
-    # def __repr__(self):
-    #     return f'<Author {self.name}>'
-    
     @property
     def id(self):
         return self._id
@@ -53,4 +50,4 @@ class Author:
         magazines_data = cursor.fetchall()
         return magazines_data
 
-   
+ 
